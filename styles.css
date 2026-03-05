@@ -1,0 +1,787 @@
+/* MAFAN - Miracle Arena For All Nations
+   Color palette: purple #4a2c7a / #5b3a8c, yellow #f4c430, blue gradient, white */
+
+:root {
+    --mafan-purple: #4a2c7a;
+    --mafan-purple-dark: #3a2260;
+    --mafan-purple-light: #5b3a8c;
+    --mafan-yellow: #f4c430;
+    --mafan-yellow-light: #fad652;
+    --mafan-blue-start: #2563eb;
+    --mafan-blue-end: #1e40af;
+    --white: #fff;
+    --gray-100: #f5f5f5;
+    --gray-400: #9ca3af;
+    --gray-600: #4b5563;
+    --font-sans: 'Montserrat', -apple-system, sans-serif;
+    --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    --font-script: 'Cormorant Garamond', Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--gray-600);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Utility bar - dark purple */
+.utility-bar {
+    background: var(--mafan-purple-dark);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.utility-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.prayer-line a {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.utility-links {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.util-link {
+    color: var(--white);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.util-link:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    opacity: 0.9;
+}
+
+.utility-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-link {
+    color: var(--white);
+    font-weight: 600;
+    padding: 0.25rem;
+}
+
+.social-link:hover {
+    opacity: 0.85;
+}
+
+.btn-donate {
+    background: var(--mafan-purple-light);
+    color: var(--white);
+    padding: 0.4rem 0.9rem;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.btn-donate:hover {
+    background: var(--mafan-purple);
+}
+
+/* Brand bar - white */
+.brand-bar {
+    background: var(--white);
+    padding: 1rem 1.5rem 1.25rem;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.brand-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo-block {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-img {
+    height: 72px;
+    width: auto;
+    max-width: 320px;
+    object-fit: contain;
+    object-position: left center;
+    display: block;
+}
+
+.mafan-acronym {
+    font-family: var(--font-sans);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--mafan-purple);
+    letter-spacing: -0.02em;
+    margin-left: 0.5rem;
+}
+
+.tagline {
+    font-family: var(--font-script);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--gray-600);
+    margin: 0;
+    text-align: right;
+    max-width: 320px;
+    line-height: 1.5;
+}
+
+/* Main nav - purple */
+.main-nav {
+    background: var(--mafan-purple);
+    padding: 0.6rem 1.5rem;
+}
+
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.nav-link {
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.35rem 0.5rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--mafan-yellow);
+}
+
+.nav-link.active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.nav-sep {
+    color: rgba(255,255,255,0.5);
+    font-weight: 400;
+    user-select: none;
+}
+
+.nav-arrow {
+    font-size: 0.6rem;
+    opacity: 0.9;
+}
+
+/* Hero */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 420px;
+    position: relative;
+}
+
+.hero-image-wrap {
+    background: var(--mafan-yellow);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.hero-image {
+    width: 85%;
+    max-width: 520px;
+    height: auto;
+    object-fit: cover;
+    object-position: center bottom;
+    display: block;
+}
+
+.hero-image-placeholder {
+    width: 85%;
+    max-width: 520px;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--mafan-purple);
+    background: rgba(255,255,255,0.4);
+    border: 2px dashed var(--mafan-purple);
+    border-radius: 8px;
+}
+
+.hero-content {
+    background: var(--mafan-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-family: var(--font-sans);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0;
+    background: linear-gradient(180deg, var(--mafan-blue-start) 0%, var(--mafan-blue-end) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Sections */
+.section {
+    padding: 3.5rem 1.5rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container-wide {
+    max-width: 1000px;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--mafan-purple);
+    margin: 0 0 1rem;
+}
+
+.section-lead {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0 0 1.5rem;
+    color: var(--gray-600);
+}
+
+.section-light {
+    background: var(--white);
+    color: var(--gray-600);
+}
+
+.section-purple {
+    background: var(--mafan-purple);
+    color: var(--white);
+}
+
+.section-purple .section-title,
+.section-purple .section-lead {
+    color: var(--white);
+}
+
+.section-purple .section-lead {
+    opacity: 0.95;
+}
+
+.section-purple .subsection-title {
+    color: var(--white);
+}
+
+.section-purple .service-times-list,
+.section-purple .service-location {
+    color: var(--white);
+    opacity: 0.95;
+}
+
+.section-purple .service-location a {
+    color: var(--mafan-yellow-light);
+}
+
+.section-yellow {
+    background: var(--mafan-yellow);
+    color: var(--gray-600);
+}
+
+.section-yellow .section-title {
+    color: var(--mafan-purple);
+}
+
+.subsection-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--mafan-purple);
+    margin: 0 0 0.75rem;
+}
+
+/* Services grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.service-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(74, 44, 122, 0.06);
+}
+
+.service-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--mafan-purple);
+    margin: 0 0 0.5rem;
+}
+
+.service-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--gray-600);
+}
+
+/* Service times list */
+.service-times-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.service-times-list li {
+    padding: 0.25rem 0;
+    font-size: 1.05rem;
+}
+
+.service-location {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--gray-600);
+}
+
+.service-location a {
+    color: var(--mafan-purple);
+    font-weight: 600;
+}
+
+/* Buttons */
+.btn-outline {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border: 2px solid var(--mafan-purple);
+    color: var(--mafan-purple);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline:hover {
+    background: var(--mafan-purple);
+    color: var(--white);
+}
+
+.btn-light {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.btn-light:hover {
+    background: var(--white);
+    color: var(--mafan-purple);
+}
+
+/* Pastors welcome */
+.welcome-text {
+    margin: 0 0 1.5rem;
+}
+
+.welcome-text p {
+    margin: 0 0 1rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.signature {
+    font-weight: 600;
+    color: var(--mafan-purple);
+    margin: 0;
+}
+
+.signature em {
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+/* Verse block */
+.section-verse {
+    background: var(--gray-100);
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+}
+
+.verse {
+    font-family: var(--font-script);
+    font-style: italic;
+    font-size: 1.35rem;
+    color: var(--mafan-purple);
+    margin: 0 0 0.5rem;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-verse cite {
+    font-size: 1rem;
+    color: var(--gray-600);
+    font-style: normal;
+}
+
+/* Events */
+.events-upcoming {
+    font-size: 1.05rem;
+    margin: 0 0 1.5rem;
+    color: var(--gray-600);
+}
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.event-card {
+    background: var(--white);
+    border: 2px solid var(--mafan-purple);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.event-date {
+    display: block;
+    font-weight: 600;
+    color: var(--mafan-purple);
+    margin-bottom: 0.25rem;
+}
+
+.event-time {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--gray-400);
+    margin-bottom: 0.5rem;
+}
+
+.event-name {
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem;
+    color: var(--gray-600);
+}
+
+.event-location {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--gray-400);
+}
+
+/* Credentials & Certifications */
+.credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.credential-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(74, 44, 122, 0.06);
+    transition: box-shadow 0.2s;
+}
+
+.credential-card:hover {
+    box-shadow: 0 4px 16px rgba(74, 44, 122, 0.12);
+}
+
+.credential-link {
+    display: block;
+    background: var(--gray-100);
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+}
+
+.credential-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.25s;
+}
+
+.credential-link:hover .credential-img {
+    transform: scale(1.03);
+}
+
+.credential-card > .credential-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--mafan-purple);
+    margin: 0.75rem 1rem 0.35rem;
+}
+
+.credential-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--gray-600);
+    margin: 0 1rem 1rem;
+}
+
+/* Gallery */
+.gallery-category-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--mafan-purple);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid var(--mafan-yellow);
+}
+
+.gallery-category-title:first-of-type {
+    margin-top: 1.5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-item {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--gray-100);
+    aspect-ratio: 1;
+    box-shadow: 0 2px 8px rgba(74, 44, 122, 0.08);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.gallery-item:hover {
+    box-shadow: 0 6px 20px rgba(74, 44, 122, 0.15);
+    transform: translateY(-2px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Donate blocks */
+.donate-block {
+    margin: 2rem 0 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(74, 44, 122, 0.2);
+}
+
+.donate-block .subsection-title {
+    color: var(--mafan-purple);
+}
+
+.donate-block p {
+    margin: 0 0 0.75rem;
+    line-height: 1.7;
+}
+
+.scripture-ref {
+    font-style: italic;
+    color: var(--mafan-purple);
+    margin-top: 0.5rem !important;
+}
+
+.donate-block a {
+    color: var(--mafan-purple);
+    font-weight: 600;
+}
+
+.donate-block a:hover {
+    text-decoration: underline;
+}
+
+/* Contact */
+.contact-regions {
+    margin: 0 0 1rem;
+    font-size: 0.95rem;
+    color: var(--gray-600);
+}
+
+.contact-details {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.contact-block {
+    margin: 0;
+}
+
+.contact-block .subsection-title {
+    margin-bottom: 0.5rem;
+}
+
+.contact-details p {
+    margin: 0 0 0.5rem;
+}
+
+.contact-details a {
+    color: var(--mafan-purple);
+    font-weight: 600;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.address {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.contact-times.service-times-list {
+    margin: 0;
+}
+
+/* Service times placeholder */
+.service-times .service-note {
+    margin: 0;
+    color: var(--gray-600);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--mafan-purple-dark);
+    color: var(--white);
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.footer-brand {
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+}
+
+.footer-tagline {
+    font-style: italic;
+    opacity: 0.9;
+    margin: 0 0 1rem;
+    font-size: 0.95rem;
+}
+
+.footer-copy {
+    margin: 0;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .hero-image-wrap {
+        min-height: 280px;
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: none;
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+    }
+
+    .brand-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tagline {
+        text-align: left;
+    }
+
+    .utility-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .utility-right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-inner {
+        justify-content: flex-start;
+    }
+
+    .logo-img {
+        height: 56px;
+        max-width: 260px;
+    }
+
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+}
