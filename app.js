@@ -35,6 +35,42 @@
     window.addEventListener('scroll', setActiveNav);
     setActiveNav();
 
+    // Hero carousel: rotate taglines (dynamic like headquarters)
+    var heroSlides = document.querySelectorAll('.hero-slide');
+    var heroDots = document.querySelectorAll('.hero-dot');
+    var heroInterval = 5000;
+    var heroTimer = null;
+    var currentHeroIndex = 0;
+
+    function setHeroSlide(index) {
+        if (!heroSlides.length) return;
+        currentHeroIndex = (index + heroSlides.length) % heroSlides.length;
+        heroSlides.forEach(function (slide, i) {
+            slide.classList.toggle('hero-slide-active', i === currentHeroIndex);
+        });
+        heroDots.forEach(function (dot, i) {
+            dot.classList.toggle('active', i === currentHeroIndex);
+        });
+    }
+
+    function nextHeroSlide() {
+        setHeroSlide(currentHeroIndex + 1);
+    }
+
+    if (heroSlides.length && heroDots.length) {
+        heroTimer = setInterval(nextHeroSlide, heroInterval);
+        heroDots.forEach(function (dot) {
+            dot.addEventListener('click', function () {
+                var i = parseInt(this.getAttribute('data-index'), 10);
+                if (!isNaN(i)) {
+                    setHeroSlide(i);
+                    clearInterval(heroTimer);
+                    heroTimer = setInterval(nextHeroSlide, heroInterval);
+                }
+            });
+        });
+    }
+
     navLinks.forEach(function (link) {
         link.addEventListener('click', function (e) {
             var href = this.getAttribute('href');
