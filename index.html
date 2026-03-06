@@ -19,6 +19,11 @@
                 <a href="https://maps.app.goo.gl/bKwmSCzJu79yQXyr8" target="_blank" rel="noopener" class="util-link"><span class="icon">📍</span> Find our location</a>
                 <a href="mailto:miraclearearenaskb@gmail.com" class="util-link"><span class="icon">✉</span> miraclearearenaskb@gmail.com</a>
             </span>
+            <span class="utility-right">
+                <a href="#" class="social-link" aria-label="Facebook">f</a>
+                <a href="#" class="social-link" aria-label="X">𝕏</a>
+                <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            </span>
         </div>
     </header>
 
@@ -40,9 +45,7 @@
             <span class="nav-sep">/</span>
             <a href="#about" class="nav-link">ABOUT MAFAN SKN<span class="nav-arrow">▼</span></a>
             <span class="nav-sep">/</span>
-            <a href="#ministries" class="nav-link">MINISTRIES <span class="nav-arrow">▼</span></a>
-            <span class="nav-sep">/</span>
-            <a href="#services" class="nav-link">SERVICES</a>
+            <a href="#ministries-services" class="nav-link">MINISTRIES &amp; SERVICES</a>
             <span class="nav-sep">/</span>
             <a href="#events" class="nav-link">EVENTS</a>
             <span class="nav-sep">/</span>
@@ -58,14 +61,24 @@
     </nav>
 
     <main>
-        <!-- Hero -->
+        <!-- Hero (dynamic carousel like headquarters) -->
         <section id="home" class="hero">
             <div class="hero-image-wrap">
-                <img src="assets/front.jpg" alt="Dr. Pst. Viome Gumbs-Dyer, Senior Pastor" class="hero-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div class="hero-image-placeholder" style="display:none;" aria-hidden="true">Dr. Pst. Viome Gumbs-Dyer — Senior Pastor</div>
+                <img src="assets/front.jpg" alt="Dr. Pst. Viome Gumbs, Senior Pastor" class="hero-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="hero-image-placeholder" style="display:none;" aria-hidden="true">Dr. Pst. Viome Gumbs — Senior Pastor</div>
             </div>
             <div class="hero-content">
                 <h1 class="hero-title">WELCOME HOME</h1>
+                <div class="hero-tagline-wrap">
+                    <p class="hero-tagline hero-slide hero-slide-active">We are called to serve you and to help you grow in your walk with Jesus Christ.</p>
+                    <p class="hero-tagline hero-slide">Reaching everyone, everywhere, all the time—with the gospel of Jesus Christ.</p>
+                    <p class="hero-tagline hero-slide">Training and equipping Christians to demonstrate the power of God through miracles, signs and wonders.</p>
+                </div>
+                <div class="hero-dots" role="tablist" aria-label="Hero slides">
+                    <button type="button" class="hero-dot active" aria-label="Slide 1" data-index="0"></button>
+                    <button type="button" class="hero-dot" aria-label="Slide 2" data-index="1"></button>
+                    <button type="button" class="hero-dot" aria-label="Slide 3" data-index="2"></button>
+                </div>
             </div>
         </section>
 
@@ -73,7 +86,7 @@
         <section id="mission" class="section section-light">
             <div class="container">
                 <h2 class="section-title">Our Mission</h2>
-                <p class="section-lead">Miracle Arena For All Nations is a multi-cultural charismatic church, based in the heart of Toronto, Canada. Under the leadership of Dr. Pst. Viome Gumbs-Dyer, we train and equip Christians to actively fulfill the commission of Jesus Christ as outlined in Mark 16:15-18, to make disciples and to demonstrate the power of God through miracles, signs and wonders.</p>
+                <p class="section-lead">Miracle Arena For All Nations is a multi-cultural charismatic church, based in the heart of Toronto, Canada. Under the leadership of Dr. Pst. Viome Gumbs, we train and equip Christians to actively fulfill the commission of Jesus Christ as outlined in Mark 16:15-18, to make disciples and to demonstrate the power of God through miracles, signs and wonders.</p>
                 <a href="#about" class="btn-outline">About us</a>
             </div>
         </section>
@@ -95,12 +108,41 @@
             </div>
         </section>
 
-        <!-- Ministries -->
-        <section id="ministries" class="section section-light">
-            <div class="container">
-                <h2 class="section-title">Browse Ministries</h2>
-                <p class="section-lead">How can we serve you better? From youth and children's programs to outreach initiatives, discipleship, and community support, our ministries are designed to meet spiritual, emotional, and practical needs. Each ministry offers opportunities to deepen your faith, build relationships, and make an impact in the Kingdom of God. Browse our ministries and find your place in our church family today!</p>
-                <a href="#ministries" class="btn-outline">Join a group</a>
+        <!-- Ministries & Services (merged) -->
+        <section id="ministries-services" class="section section-light">
+            <div class="container container-wide">
+                <h2 class="section-title">Ministries &amp; Services</h2>
+                <p class="section-lead">How can we serve you better? From youth and children's programs to outreach, discipleship, and community support, we offer Christ-centered ministries and services to support you and your family in faith and life.</p>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <h3 class="service-card-title">Water Baptism</h3>
+                        <p>A public declaration of faith in Jesus Christ, that symbolizes a believer's new life in Christ, signifying cleansing from sin and rebirth in the Holy Spirit.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-card-title">Dedication</h3>
+                        <p>A special service where parents present their children to God. It's a moment to celebrate family and commit to raising children in a faith-filled environment.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-card-title">Cell Groups</h3>
+                        <p>The purpose of cell groups is to cultivate a family-like atmosphere and foster relationships.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-card-title">Weddings</h3>
+                        <p>We offer Christ-centered wedding ceremonies that honor God's design for marriage. Our team works closely with couples to create a meaningful and personalized service for their special day.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-card-title">Discipleship</h3>
+                        <p>Deepen your relationship with God through mentoring and structured Bible studies. Our discipleship program equips believers to grow in faith, serve others, and become effective witnesses of the Gospel.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-card-title">Counselling</h3>
+                        <p>Receive biblically-based support and guidance in a confidential setting. Our counselling services are designed to help individuals and families navigate life's challenges with faith and hope.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3 class="service-card-title">New Believer's</h3>
+                        <p>Designed for those new to the faith, this class offers foundational teachings about Christianity, helping new believers grow spiritually and integrate into the church community.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -165,49 +207,7 @@
                     <p>I pray that your home be a reflection of the joy and peace that God has promised to all of His children who follow Him. I bless your children, the fruit of your body. I speak life into your marriage, your ministry and your mission. As you lie down at night I pray for more than sleep. I pray for rest.</p>
                     <p>Rest in Him and arise refreshed for we need you. Your prayers, your support and your love are important to us. So we pray you will take care of yourself.</p>
                 </div>
-                <p class="signature">DR. PST. VIOME GUMBS-DYER<br><em>Senior Pastor</em></p>
-            </div>
-        </section>
-
-        <!-- Services -->
-        <section id="services" class="section section-light">
-            <div class="container container-wide">
-                <h2 class="section-title">Services</h2>
-                <p class="section-lead">We offer a range of Christ-centered services to support you and your family in faith and life.</p>
-                <div class="services-grid">
-                    <article class="service-card">
-                        <h3 class="service-card-title">Water Baptism</h3>
-                        <p>A public declaration of faith in Jesus Christ, that symbolizes a believer's new life in Christ, signifying cleansing from sin and rebirth in the Holy Spirit.</p>
-                    </article>
-                    <article class="service-card">
-                        <h3 class="service-card-title">Dedication</h3>
-                        <p>A special service where parents present their children to God. It's a moment to celebrate family and commit to raising children in a faith-filled environment.</p>
-                    </article>
-                    <article class="service-card">
-                        <h3 class="service-card-title">Cell Groups</h3>
-                        <p>The purpose of cell groups is to cultivate a family-like atmosphere and foster relationships.</p>
-                    </article>
-                    <article class="service-card">
-                        <h3 class="service-card-title">Weddings</h3>
-                        <p>We offer Christ-centered wedding ceremonies that honor God's design for marriage. Our team works closely with couples to create a meaningful and personalized service for their special day.</p>
-                    </article>
-                    <article class="service-card">
-                        <h3 class="service-card-title">Discipleship</h3>
-                        <p>Deepen your relationship with God through mentoring and structured Bible studies. Our discipleship program equips believers to grow in faith, serve others, and become effective witnesses of the Gospel.</p>
-                    </article>
-                    <article class="service-card">
-                        <h3 class="service-card-title">Counselling</h3>
-                        <p>Receive biblically-based support and guidance in a confidential setting. Our counselling services are designed to help individuals and families navigate life's challenges with faith and hope.</p>
-                    </article>
-                    <article class="service-card">
-                        <h3 class="service-card-title">Food Bank</h3>
-                        <p>Provide food assistance to those in need within our community, demonstrating Christ's love through practical support. Our food bank is open to ensuring that no one goes hungry.</p>
-                    </article>
-                    <article class="service-card">
-                        <h3 class="service-card-title">New Believer's</h3>
-                        <p>Designed for those new to the faith, this class offers foundational teachings about Christianity, helping new believers grow spiritually and integrate into the church community.</p>
-                    </article>
-                </div>
+                <p class="signature">DR. PST. VIOME GUMBS<br><em>Senior Pastor</em></p>
             </div>
         </section>
 
@@ -263,11 +263,11 @@
 
                 <h3 class="gallery-category-title">Our Pastor & Milestones</h3>
                 <div class="gallery-grid">
-                    <a href="assets/pastor/pastor-portrait-robes.png" class="gallery-item img-lightbox-trigger" data-alt="Dr. Pst. Viome Gumbs-Dyer in ministerial robes"><img src="assets/pastor/pastor-portrait-robes.png" alt="Dr. Pst. Viome Gumbs-Dyer in ministerial robes" loading="lazy"></a>
-                    <a href="assets/pastor/pastor-celebration.png" class="gallery-item img-lightbox-trigger" data-alt="Dr. Pst. Viome Gumbs-Dyer at a ministry celebration"><img src="assets/pastor/pastor-celebration.png" alt="Dr. Pst. Viome Gumbs-Dyer at a ministry celebration" loading="lazy"></a>
-                    <a href="assets/pastor/graduation-ordination-1.png" class="gallery-item img-lightbox-trigger" data-alt="Dr. Pst. Viome Gumbs-Dyer receiving certificate with clergy"><img src="assets/pastor/graduation-ordination-1.png" alt="Dr. Pst. Viome Gumbs-Dyer receiving certificate with clergy" loading="lazy"></a>
+                    <a href="assets/pastor/pastor-portrait-robes.png" class="gallery-item img-lightbox-trigger" data-alt="Dr. Pst. Viome Gumbs in ministerial robes"><img src="assets/pastor/pastor-portrait-robes.png" alt="Dr. Pst. Viome Gumbs in ministerial robes" loading="lazy"></a>
+                    <a href="assets/pastor/pastor-celebration.png" class="gallery-item img-lightbox-trigger" data-alt="Dr. Pst. Viome Gumbs at a ministry celebration"><img src="assets/pastor/pastor-celebration.png" alt="Dr. Pst. Viome Gumbs at a ministry celebration" loading="lazy"></a>
+                    <a href="assets/pastor/graduation-ordination-1.png" class="gallery-item img-lightbox-trigger" data-alt="Dr. Pst. Viome Gumbs receiving certificate with clergy"><img src="assets/pastor/graduation-ordination-1.png" alt="Dr. Pst. Viome Gumbs receiving certificate with clergy" loading="lazy"></a>
                     <a href="assets/pastor/graduation-ordination-2.png" class="gallery-item img-lightbox-trigger" data-alt="Graduation or ordination ceremony"><img src="assets/pastor/graduation-ordination-2.png" alt="Graduation or ordination ceremony" loading="lazy"></a>
-                    <a href="assets/pastor/graduation-with-family.png" class="gallery-item img-lightbox-trigger" data-alt="Dr. Pst. Viome Gumbs-Dyer in doctoral regalia"><img src="assets/pastor/graduation-with-family.png" alt="Dr. Pst. Viome Gumbs-Dyer in doctoral regalia" loading="lazy"></a>
+                    <a href="assets/pastor/graduation-with-family.png" class="gallery-item img-lightbox-trigger" data-alt="Dr. Pst. Viome Gumbs in doctoral regalia"><img src="assets/pastor/graduation-with-family.png" alt="Dr. Pst. Viome Gumbs in doctoral regalia" loading="lazy"></a>
                 </div>
 
                 <h3 class="gallery-category-title">Our Facility</h3>
@@ -277,7 +277,7 @@
 
                 <h3 class="gallery-category-title">Ceremonies & Ministry</h3>
                 <div class="gallery-grid">
-                    <a href="assets/gallery/ceremonies/baby-dedication-2015-1.png" class="gallery-item img-lightbox-trigger" data-alt="Baby dedication, March 2015"><img src="assets/gallery/ceremonies/baby-dedication-2015-1.png" alt="Baby dedication with Dr. Pst. Viome Gumbs-Dyer, March 2015" loading="lazy"></a>
+                    <a href="assets/gallery/ceremonies/baby-dedication-2015-1.png" class="gallery-item img-lightbox-trigger" data-alt="Baby dedication, March 2015"><img src="assets/gallery/ceremonies/baby-dedication-2015-1.png" alt="Baby dedication with Dr. Pst. Viome Gumbs, March 2015" loading="lazy"></a>
                     <a href="assets/gallery/ceremonies/baby-dedication-2015-2.png" class="gallery-item img-lightbox-trigger" data-alt="Baby dedication ceremony, March 2015"><img src="assets/gallery/ceremonies/baby-dedication-2015-2.png" alt="Baby dedication ceremony, March 2015" loading="lazy"></a>
                 </div>
 
@@ -294,12 +294,12 @@
                 <h3 class="gallery-category-title">Community & Fellowship</h3>
                 <div class="gallery-grid">
                     <a href="assets/community/fellowship-beach.png" class="gallery-item img-lightbox-trigger" data-alt="Church family fellowship at the beach"><img src="assets/community/fellowship-beach.png" alt="Church family fellowship at the beach" loading="lazy"></a>
-                    <a href="assets/community/faces-of-2019.png" class="gallery-item img-lightbox-trigger" data-alt="Faces of 2019"><img src="assets/community/faces-of-2019.png" alt="Faces of 2019, June 2019" loading="lazy"></a>
+                    <a href="assets/events/faces-of-2019.png" class="gallery-item img-lightbox-trigger" data-alt="Faces of 2019"><img src="assets/community/faces-of-2019.png" alt="Faces of 2019, June 2019" loading="lazy"></a>
                 </div>
 
                 <h3 class="gallery-category-title">Events</h3>
                 <div class="gallery-grid">
-                    <a href="assets/events/event-flyer-redeemed-life.png" class="gallery-item img-lightbox-trigger" data-alt="Redeemed Life International event flyer"><img src="assets/events/event-flyer-redeemed-life.png" alt="Redeemed Life International event flyer with Host Pastor Viome Dyer" loading="lazy"></a>
+                    <a href="assets/events/event-flyer-redeemed-life.png" class="gallery-item img-lightbox-trigger" data-alt="Redeemed Life International event flyer"><img src="assets/events/event-flyer-redeemed-life.png" alt="Redeemed Life International event flyer with Host Pastor Viome Gumbs" loading="lazy"></a>
                 
                 </div>
             </div>
@@ -323,8 +323,8 @@
                 <h3 class="subsection-title">Founder &amp; Leadership</h3>
                 <div class="leadership-newspaper">
                     <div class="newspaper-photo newspaper-photo-main">
-                        <button type="button" class="img-lightbox-trigger" data-src="assets/dr.viome.jpg" data-alt="Dr. Pst. Viome Gumbs-Dyer, Senior Pastor" aria-label="View larger image">
-                            <img src="assets/dr.viome.jpg" alt="Dr. Pst. Viome Gumbs-Dyer, Senior Pastor" loading="lazy">
+                        <button type="button" class="img-lightbox-trigger" data-src="assets/dr.viome.jpg" data-alt="Dr. Pst. Viome Gumbs, Senior Pastor" aria-label="View larger image">
+                            <img src="assets/dr.viome.jpg" alt="Dr. Pst. Viome Gumbs, Senior Pastor" loading="lazy">
                         </button>
                         <span class="newspaper-caption">Rev. Dr. Viome Gumbs — Founder &amp; Senior Pastor</span>
                     </div>
@@ -336,7 +336,7 @@
                     </div>
                 </div>
                 <div class="leadership-text">
-                    <p><strong>Founder &amp; Senior Pastor:</strong> Rev. Dr. Viome Cumbs (also referenced as Rev. Dr. Viome Gumbs or Rev. Dr. Vione Gumbs), a born-again, baptized believer who was called to ministry at age 49 and previously led Redeemed Life International (2014–2020) before the ministry became Miracle Arena Church St. Kitts.</p>
+                    <p><strong>Founder &amp; Senior Pastor:</strong> Rev. Dr. Viome Gumbs (Rev. Dr. Viome Gumbs), a born-again, baptized believer who was called to ministry at age 49 and previously led Redeemed Life International (2014–2020) before the ministry became Miracle Arena Church St. Kitts.</p>
                     <p>She serves under the spiritual covering of <strong>Prophet Dr. Kofi Danso</strong> of Miracle Arena For All Nations, emphasizing evangelism and the demonstration of God's power.</p>
                 </div>
 
@@ -393,6 +393,9 @@
     <script src="app.js"></script>
 </body>
 </html>
+
+
+
 
 
 
