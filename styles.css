@@ -12,10 +12,16 @@
     --white: #fff;
     --gray-100: #f5f5f5;
     --gray-400: #9ca3af;
-    --gray-600: #4b5563;
+    --gray-600: #374151;
+    --gray-700: #1f2937;
     --font-sans: 'Montserrat', -apple-system, sans-serif;
     --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
     --font-script: 'Cormorant Garamond', Georgia, serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-soft: 0 4px 24px rgba(74, 44, 122, 0.08);
+    --shadow-medium: 0 8px 32px rgba(74, 44, 122, 0.12);
+    --shadow-strong: 0 16px 48px rgba(0, 0, 0, 0.2);
 }
 
 *,
@@ -28,12 +34,24 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 body {
     margin: 0;
     font-family: var(--font-sans);
     font-size: 16px;
     line-height: 1.6;
-    color: var(--gray-600);
+    color: var(--gray-700);
+}
+
+body.lightbox-open {
+    overflow: hidden;
 }
 
 a {
@@ -159,7 +177,7 @@ a {
     font-family: var(--font-script);
     font-style: italic;
     font-size: 1rem;
-    color: var(--gray-600);
+    color: var(--gray-700);
     margin: 0;
     text-align: right;
     max-width: 320px;
@@ -272,6 +290,33 @@ a {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: heroTitleIn 0.8s var(--ease-out-expo) both;
+}
+
+@keyframes heroTitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-image {
+    animation: heroImageIn 0.9s var(--ease-out-expo) 0.1s both;
+}
+
+@keyframes heroImageIn {
+    from {
+        opacity: 0;
+        transform: translateX(-16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Sections */
@@ -300,12 +345,17 @@ a {
     font-size: 1.05rem;
     line-height: 1.7;
     margin: 0 0 1.5rem;
-    color: var(--gray-600);
+    color: var(--gray-700);
 }
 
 .section-light {
     background: var(--white);
-    color: var(--gray-600);
+    color: var(--gray-700);
+}
+
+.section-light .section-lead,
+.section-light p {
+    color: var(--gray-700);
 }
 
 .section-purple {
@@ -379,7 +429,7 @@ a {
     margin: 0;
     font-size: 0.95rem;
     line-height: 1.6;
-    color: var(--gray-600);
+    color: var(--gray-700);
 }
 
 /* Service times list */
@@ -397,7 +447,7 @@ a {
 .service-location {
     margin: 0;
     font-size: 0.95rem;
-    color: var(--gray-600);
+    color: var(--gray-700);
 }
 
 .service-location a {
@@ -482,7 +532,7 @@ a {
 .events-upcoming {
     font-size: 1.05rem;
     margin: 0 0 1.5rem;
-    color: var(--gray-600);
+    color: var(--gray-700);
 }
 
 .events-list {
@@ -515,7 +565,7 @@ a {
 .event-name {
     font-size: 1.2rem;
     margin: 0 0 0.5rem;
-    color: var(--gray-600);
+    color: var(--gray-700);
 }
 
 .event-location {
@@ -574,7 +624,7 @@ a {
 .credential-desc {
     font-size: 0.9rem;
     line-height: 1.5;
-    color: var(--gray-600);
+    color: var(--gray-700);
     margin: 0 1rem 1rem;
 }
 
@@ -655,7 +705,7 @@ a {
 .contact-regions {
     margin: 0 0 1rem;
     font-size: 0.95rem;
-    color: var(--gray-600);
+    color: var(--gray-700);
 }
 
 .contact-details {
@@ -698,7 +748,7 @@ a {
 /* Service times placeholder */
 .service-times .service-note {
     margin: 0;
-    color: var(--gray-600);
+    color: var(--gray-700);
 }
 
 /* Footer */
@@ -725,6 +775,260 @@ a {
     margin: 0;
     font-size: 0.85rem;
     opacity: 0.8;
+}
+
+/* St. Kitts – newspaper-style pastor photos */
+.leadership-newspaper {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    margin: 1.25rem 0 1.5rem;
+}
+
+.newspaper-photo {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    background: var(--gray-100);
+}
+
+.newspaper-photo-main {
+    min-height: 280px;
+}
+
+.newspaper-photo-side {
+    min-height: 220px;
+}
+
+.img-lightbox-trigger {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+}
+
+.newspaper-photo .img-lightbox-trigger {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+}
+
+.newspaper-photo-side .img-lightbox-trigger {
+    min-height: 200px;
+}
+
+.newspaper-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.4s var(--ease-out-expo);
+}
+
+.newspaper-photo:hover img {
+    transform: scale(1.03);
+}
+
+.newspaper-caption {
+    display: block;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--mafan-purple);
+    background: var(--white);
+    border-top: 2px solid var(--mafan-yellow);
+}
+
+.leadership-text {
+    margin: 0 0 1.5rem;
+}
+
+.leadership-text p {
+    color: var(--gray-700);
+    margin: 0 0 0.75rem;
+}
+
+@media (max-width: 700px) {
+    .leadership-newspaper {
+        grid-template-columns: 1fr;
+    }
+
+    .newspaper-photo .img-lightbox-trigger,
+    .newspaper-photo-side .img-lightbox-trigger {
+        min-height: 220px;
+    }
+}
+
+/* Lightbox – open on site with transitions */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s var(--ease-in-out), visibility 0.3s var(--ease-in-out);
+}
+
+.lightbox[hidden] {
+    display: none !important;
+}
+
+.lightbox-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.lightbox-content {
+    position: relative;
+    z-index: 1;
+    max-width: 92vw;
+    max-height: 88vh;
+    animation: lightboxZoom 0.35s var(--ease-out-expo) forwards;
+}
+
+@keyframes lightboxZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: var(--shadow-strong);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -2.5rem;
+    right: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: none;
+    background: var(--white);
+    color: var(--mafan-purple);
+    font-size: 1.75rem;
+    line-height: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: var(--shadow-soft);
+}
+
+.lightbox-close:hover {
+    background: var(--mafan-yellow);
+    transform: scale(1.08);
+}
+
+/* Credential / gallery links as lightbox triggers (no new tab) */
+.credential-link.img-lightbox-trigger,
+.gallery-item.img-lightbox-trigger {
+    cursor: pointer;
+}
+
+/* Donations section */
+.section-donate {
+    text-align: center;
+}
+
+.donate-verse {
+    font-family: var(--font-script);
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    color: var(--white);
+    margin: 0 auto 0.5rem;
+    max-width: 640px;
+    line-height: 1.6;
+}
+
+.donate-ref {
+    display: block;
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 1.25rem;
+    font-style: normal;
+}
+
+.donate-lead {
+    margin: 0 0 1rem;
+    opacity: 0.95;
+}
+
+.btn-donate-inline {
+    display: inline-block;
+    padding: 0.65rem 1.5rem;
+    background: var(--mafan-yellow);
+    color: var(--mafan-purple);
+    font-weight: 700;
+    border-radius: 8px;
+    transition: transform 0.25s var(--ease-out-expo), box-shadow 0.25s;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.btn-donate-inline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Section transitions */
+.section {
+    transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+}
+
+.section-title {
+    transition: transform 0.5s var(--ease-out-expo);
+}
+
+/* Smooth transitions on interactive elements */
+a, .nav-link, .btn-outline, .gallery-item, .credential-link,
+.service-card, .event-card {
+    transition: color 0.25s, background 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+.credential-img {
+    transition: transform 0.35s var(--ease-out-expo);
+}
+
+.gallery-item img {
+    transition: transform 0.35s var(--ease-out-expo);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
 }
 
 /* Responsive */
