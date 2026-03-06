@@ -47,4 +47,47 @@
             }
         });
     });
+
+    // Image lightbox: open on same page with transitions (no new tab)
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = lightbox && lightbox.querySelector('.lightbox-img');
+    var lightboxBackdrop = lightbox && lightbox.querySelector('.lightbox-backdrop');
+    var lightboxClose = lightbox && lightbox.querySelector('.lightbox-close');
+
+    function openLightbox(src, alt) {
+        if (!lightbox || !lightboxImg) return;
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || 'Image';
+        lightbox.removeAttribute('hidden');
+        document.body.classList.add('lightbox-open');
+        lightbox.classList.add('lightbox-visible');
+        lightboxClose.focus();
+    }
+
+    function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('lightbox-visible');
+        setTimeout(function () {
+            lightbox.setAttribute('hidden', '');
+            document.body.classList.remove('lightbox-open');
+            if (lightboxImg) lightboxImg.removeAttribute('src');
+        }, 280);
+    }
+
+    if (lightbox) {
+        document.querySelectorAll('.img-lightbox-trigger').forEach(function (trigger) {
+            trigger.addEventListener('click', function (e) {
+                e.preventDefault();
+                var src = this.getAttribute('data-src') || this.getAttribute('href');
+                var alt = this.getAttribute('data-alt');
+                if (!alt && this.querySelector('img')) alt = this.querySelector('img').getAttribute('alt') || '';
+                if (src) openLightbox(src, alt);
+            });
+        });
+        if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+        if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    }
 })();
